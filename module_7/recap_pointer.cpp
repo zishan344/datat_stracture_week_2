@@ -17,6 +17,22 @@ void swap_fun(int *a, int *b)
   *a = *b;
   *b = temp;
 };
+void reverseArr(int *arr, int size)
+{
+
+  int *start = arr;
+  int *end = arr + size - 1;
+
+  while (start < end)
+  {
+    int tmp = *start;
+    *start = *end;
+    *end = tmp;
+    start++;
+    end--;
+  }
+};
+
 int main()
 {
 
@@ -134,6 +150,14 @@ int main()
   }
 
   // Write a program to reverse an array using pointers.
+  {
+    int arr[5] = {10, 20, 30, 40, 50};
+    reverseArr(arr, 5);
+    for (int i = 0; i < 5; i++)
+    {
+      cout << arr[i] << " ";
+    }
+  }
 
   return 0;
 }
