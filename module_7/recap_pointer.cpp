@@ -29,10 +29,25 @@ int main()
     int b = 20;
     int *ptr1 = &a;
     int *ptr2 = &b;
-    if (*ptr1 < *ptr2)
+    /* if (*ptr1 < *ptr2)
     {
       cout << "ptr1 points to a memory location before ptr2" << endl;
+    } */
+  }
+
+  // Pointers and Arrays
+
+  {
+    int arr[3] = {10, 20, 30};
+    int *ptr = arr;
+    for (int i = 0; i < 3; i++)
+    {
+      cout << *(ptr + i) << " ";
     }
+    /* for (int i = 0; i < 3; i++)
+    {
+      cout << *(arr + i) << " ";
+    } */
   }
 
   return 0;
