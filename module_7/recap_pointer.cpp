@@ -4,6 +4,10 @@ void increment(int *ptr)
 {
   (*ptr)++;
 };
+int *createArray(int size)
+{
+  return new int[size]{0};
+}
 int main()
 {
   // initial tested in pointer
@@ -59,6 +63,36 @@ int main()
     increment(&a);
     // cout << "Value of a after increment: " << a << endl;
   }
+
+  // return pointer from function
+  {
+    int *arr = createArray(5);
+    // use the array
+    for (int i = 0; i < 5; i++)
+    {
+      // cout << arr[i] << " ";
+    }
+
+    delete[] arr;
+  }
+
+  // dynamic memory allocation
+  int *ptr = new int;
+  *ptr = 10;
+  // cout << *ptr << endl;
+  delete ptr;
+  // dynamic array handling
+  int *arr = new int[5];
+  for (int i = 0; i < 5; i++)
+  {
+    arr[i] = i * 10;
+  }
+  for (int i = 0; i < 5; i++)
+  {
+    // cout << arr[i] << " ";
+  }
+
+  delete[] arr;
 
   return 0;
 }
