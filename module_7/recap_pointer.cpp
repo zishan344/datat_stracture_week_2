@@ -77,22 +77,36 @@ int main()
   }
 
   // dynamic memory allocation
-  int *ptr = new int;
-  *ptr = 10;
-  // cout << *ptr << endl;
-  delete ptr;
-  // dynamic array handling
-  int *arr = new int[5];
-  for (int i = 0; i < 5; i++)
+
   {
-    arr[i] = i * 10;
-  }
-  for (int i = 0; i < 5; i++)
-  {
-    // cout << arr[i] << " ";
+    int *ptr = new int;
+    *ptr = 10;
+    // cout << *ptr << endl;
+    delete ptr;
+    // dynamic array handling
+    int *arr = new int[5];
+    for (int i = 0; i < 5; i++)
+    {
+      arr[i] = i * 10;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+      // cout << arr[i] << " ";
+    }
+
+    delete[] arr;
   }
 
-  delete[] arr;
+  // Pointer to a pointer
+  {
 
+    int a = 10;
+    int *ptr = &a;
+    int **ptr2 = &ptr;
+
+    cout << "Value of a: " << a << endl;
+    cout << "Value of ptr: " << *ptr << endl;
+    cout << "Value of ptr2: " << **ptr2 << endl;
+  }
   return 0;
 }
