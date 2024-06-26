@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+void increment(int *ptr)
+{
+  (*ptr)++;
+};
 int main()
 {
   // initial tested in pointer
@@ -42,12 +45,19 @@ int main()
     int *ptr = arr;
     for (int i = 0; i < 3; i++)
     {
-      cout << *(ptr + i) << " ";
+      // cout << *(ptr + i) << " ";
     }
     /* for (int i = 0; i < 3; i++)
     {
       cout << *(arr + i) << " ";
     } */
+  }
+
+  // Passing pointers to functions:
+  {
+    int a = 10;
+    increment(&a);
+    // cout << "Value of a after increment: " << a << endl;
   }
 
   return 0;
