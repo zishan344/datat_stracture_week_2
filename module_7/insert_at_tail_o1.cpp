@@ -12,23 +12,18 @@ public:
   }
 };
 
-void insert_at_tail(Node *&head, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
   Node *newNode = new Node(val);
 
   if (head == NULL)
   {
     head = newNode;
+    tail = newNode;
     return;
   }
-  Node *temp = head;
-
-  while (temp->next != NULL)
-  {
-    temp = temp->next;
-  };
-
-  temp->next = newNode;
+  tail->next = newNode;
+  tail = newNode;
 }
 
 void print_linked_list(Node *head)
@@ -92,13 +87,11 @@ void deleted_head(Node *&head)
 void deleted_tail(Node *head)
 {
   Node *temp = head;
-  int a = 0;
+
   while (temp->next->next != NULL)
   {
     temp = temp->next;
-    a++;
   }
-  cout << a << "tmp value" << temp->val << "\n";
 
   Node *deleted_tail = temp->next;
   temp->next = deleted_tail->next;
@@ -108,6 +101,7 @@ void deleted_tail(Node *head)
 int main()
 {
   Node *head = NULL;
+  Node *tail = NULL;
   int val;
   while (true)
   {
@@ -127,7 +121,7 @@ int main()
       cout << endl
            << "Type inserted value: ";
       cin >> val;
-      insert_at_tail(head, val);
+      insert_at_tail(head, tail, val);
     }
     else if (op == 2)
     {
