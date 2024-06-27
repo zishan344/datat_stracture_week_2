@@ -43,7 +43,6 @@ void insert_at_tail(Node *&head, int val)
   while (temp->next != NULL)
   {
     a += 1;
-    cout << temp->next << " new temp value" << endl;
     temp = temp->next;
   };
 
