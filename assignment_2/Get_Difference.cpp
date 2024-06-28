@@ -26,7 +26,7 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
   tail = newNode;
 }
 
-void get_difference(Node *head)
+void print_linked_list(Node *head)
 {
   if (head == NULL)
   {
@@ -83,7 +83,7 @@ int main()
     }
     insert_at_tail(head, tail, val);
   }
-  get_difference(head);
+  print_linked_list(head);
   cout
       << endl;
 
